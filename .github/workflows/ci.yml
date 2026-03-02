@@ -32,7 +32,7 @@ jobs:
       - name: Checkout conformance suite
         uses: actions/checkout@v4
         with:
-          repository: grigb/universal-manifest
+          repository: grigb/universalmanifest
           path: universal-manifest
 
       - name: Run conformance suite
