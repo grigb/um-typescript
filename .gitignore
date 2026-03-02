@@ -1,2 +1,3 @@
 node_modules/
 tests/conformance/conformance-report.json
+conformance/runner/conformance-report.json
