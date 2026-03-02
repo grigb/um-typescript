@@ -2,6 +2,8 @@
 
 Standalone TypeScript reference implementation for Universal Manifest.
 
+![UM conformance v0.2 extended](./conformance/badges/v0.2-extended.svg)
+
 ## Install
 
 ```bash
