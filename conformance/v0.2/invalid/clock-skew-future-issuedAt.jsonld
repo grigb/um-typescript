@@ -1,0 +1,19 @@
+{
+  "__validate": "structural",
+  "__expectedError": "Signature verification failed",
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.2/schema.jsonld",
+  "@id": "urn:uuid:88888888-8888-4888-8888-888888888888",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.2",
+  "subject": "did:example:future-issuer",
+  "issuedAt": "2099-12-31T23:59:59.000Z",
+  "expiresAt": "2100-01-01T23:59:59.000Z",
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "JCS-RFC8785",
+    "keyRef": "did:example:future-issuer#key-1",
+    "created": "2099-12-31T23:59:59.000Z",
+    "publicKeySpkiB64": "MCowBQYDK2VwAyEAKo+u1RTfQghZ/Z3bmZXisv0J/OBHHEXetWTXtb3Ms9k=",
+    "value": "0pN2mK8cB6wH5vR9eE3jG4xZ1sL8gD2nY7qP3oT5kS6rV0aC4yW1xU7nF9jC2oM5fQ8vD3mP6cK1gA4wN7kL0R"
+  }
+}

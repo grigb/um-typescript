@@ -15,8 +15,8 @@ async function exists(pathname) {
 async function findConformanceRoot() {
   const candidates = [
     process.env.UM_CONFORMANCE_ROOT,
-    path.resolve(process.cwd(), '../universalmanifest/conformance'),
     path.resolve(process.cwd(), 'conformance'),
+    path.resolve(process.cwd(), '../universalmanifest/conformance'),
   ].filter(Boolean)
 
   for (const candidate of candidates) {

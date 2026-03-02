@@ -1,0 +1,34 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.2/schema.jsonld",
+  "@id": "urn:uuid:55555555-5555-4555-8555-555555555555",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.2",
+  "subject": "did:example:creator-bob",
+  "issuedAt": "2026-02-27T00:00:00.000Z",
+  "expiresAt": "2026-02-28T00:00:00.000Z",
+  "pointers": [
+    {
+      "@type": "um:Pointer",
+      "rel": "canonical",
+      "href": "https://example.pod.provider/bob/profile.jsonld"
+    },
+    {
+      "@type": "um:Pointer",
+      "rel": "portfolio",
+      "href": "https://example.portfolio.site/bob/works"
+    },
+    {
+      "@type": "um:Pointer",
+      "rel": "social",
+      "href": "https://example.social/users/bob"
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "JCS-RFC8785",
+    "keyRef": "did:example:creator-bob#key-1",
+    "created": "2026-02-27T00:00:00.000Z",
+    "publicKeySpkiB64": "MCowBQYDK2VwAyEAvWsBD/ov/5zQwtkxvssqOFz/Ejca8C0NfnAJ9z0iBZY=",
+    "value": "5Tg_WNNLgPDKZqJwveR3YOYiIgMnVrdeubfTXXmC3oOqUuCqDypyQeIapo90NijqZ8hKODcouuIg4TD-Hf7bBA"
+  }
+}

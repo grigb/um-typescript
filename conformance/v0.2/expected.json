@@ -1,0 +1,126 @@
+{
+  "suiteVersion": "1.0.0-draft",
+  "specVersion": "0.2",
+  "fixtures": [
+    {
+      "filename": "invalid/clock-skew-future-issuedAt.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Signature verification failed.",
+      "category": "adversarial",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/invalid-signature-algorithm.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: signature.algorithm must be Ed25519.",
+      "category": "signature-profile",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/invalid-signature-canonicalization.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: signature.canonicalization must be JCS-RFC8785.",
+      "category": "signature-profile",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/invalid-signature-created-format.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: signature.created must be an ISO date-time.",
+      "category": "signature",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/invalid-signature-public-key.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Invalid signature.publicKeySpkiB64.",
+      "category": "signature",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/invalid-signature.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Signature verification failed.",
+      "category": "signature",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/issued-after-expires-signed.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: issuedAt must be <= expiresAt.",
+      "category": "ttl",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/missing-manifestVersion.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Unknown manifestVersion.",
+      "category": "required-fields",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/missing-signature-key-material.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: signature must include keyRef or publicKeySpkiB64.",
+      "category": "signature",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/missing-signature.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Missing signature.",
+      "category": "signature",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/tampering-modified-after-signing.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Signature verification failed.",
+      "category": "adversarial",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/manifest-with-pointers-signed.jsonld",
+      "expectedResult": "accept",
+      "reason": "Signed pointer-bearing manifest validates and verifies under v0.2.",
+      "category": "pointers",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/manifest-with-revocation-metadata.jsonld",
+      "expectedResult": "accept",
+      "reason": "Signed manifest includes revocation metadata for revocation-aware verification.",
+      "category": "revocation",
+      "specVersion": "0.2",
+      "conformanceLevel": "extended"
+    },
+    {
+      "filename": "valid/manifest-with-shards-signed.jsonld",
+      "expectedResult": "accept",
+      "reason": "Signed shard composition remains valid under the v0.2 signature profile.",
+      "category": "shards",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/minimal-signed-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Baseline v0.2 signed fixture verifies with Ed25519 over JCS canonicalization.",
+      "category": "signature",
+      "specVersion": "0.2",
+      "conformanceLevel": "baseline"
+    }
+  ]
+}

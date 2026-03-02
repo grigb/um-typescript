@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://universalmanifest.net/conformance/schema/conformance-report.schema.json",
+  "title": "Universal Manifest Conformance Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "implementation",
+    "specVersionsTested",
+    "testDate",
+    "suiteVersion",
+    "results",
+    "conformanceLevel",
+    "pass"
+  ],
+  "properties": {
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "language"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "language": { "type": "string", "minLength": 1 },
+        "organization": { "type": "string", "minLength": 1 },
+        "repository": { "type": "string", "format": "uri" }
+      }
+    },
+    "specVersionsTested": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["0.1", "0.2"]
+      }
+    },
+    "testDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "suiteVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "v0.1": { "$ref": "#/$defs/versionResult" },
+        "v0.2": { "$ref": "#/$defs/versionResult" }
+      },
+      "anyOf": [
+        { "required": ["v0.1"] },
+        { "required": ["v0.2"] }
+      ]
+    },
+    "conformanceLevel": {
+      "type": "string",
+      "enum": ["none", "v0.1-baseline", "v0.2-baseline", "v0.2-extended"]
+    },
+    "pass": {
+      "type": "boolean"
+    }
+  },
+  "$defs": {
+    "versionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "passed", "failed", "skipped", "details"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "passed": { "type": "integer", "minimum": 0 },
+        "failed": { "type": "integer", "minimum": 0 },
+        "skipped": { "type": "integer", "minimum": 0 },
+        "details": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/fixtureResult" }
+        }
+      }
+    },
+    "fixtureResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture",
+        "expectedResult",
+        "actualResult",
+        "pass",
+        "reason",
+        "category",
+        "specVersion",
+        "conformanceLevel"
+      ],
+      "properties": {
+        "fixture": { "type": "string", "minLength": 1 },
+        "expectedResult": { "type": "string", "enum": ["accept", "reject"] },
+        "actualResult": { "type": "string", "enum": ["accept", "reject", "error", "skipped"] },
+        "pass": { "type": "boolean" },
+        "reason": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "minLength": 1 },
+        "specVersion": { "type": "string", "enum": ["0.1", "0.2"] },
+        "conformanceLevel": { "type": "string", "enum": ["baseline", "extended"] },
+        "error": { "type": "string" },
+        "adapterReason": { "type": "string" }
+      }
+    }
+  }
+}

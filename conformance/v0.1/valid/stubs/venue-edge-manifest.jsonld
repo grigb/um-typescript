@@ -1,0 +1,126 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:dfbd3b8a-ec7c-40c4-a3e4-114ec972d41a",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:web:ember-cafe.localartist.network",
+  "issuedAt": "2026-02-12T02:00:00Z",
+  "expiresAt": "2026-02-13T02:00:00Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "venueIdentity",
+      "entity": {
+        "@id": "did:web:ember-cafe.localartist.network",
+        "@type": [
+          "um:Entity",
+          "um:Venue"
+        ],
+        "name": "Ember Cafe (Demo Venue)",
+        "description": "Example venue used for Universal Manifest v0.1 fixture data.",
+        "timezone": "America/New_York",
+        "locale": "en-US"
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "venuePolicy",
+      "entity": {
+        "@id": "urn:uuid:a873eefb-4811-4bba-887d-dfa8c7cfe3ac",
+        "@type": [
+          "um:Entity",
+          "um:VenuePolicy"
+        ],
+        "safeMode": "PG-13",
+        "contentRules": {
+          "allowNudity": false,
+          "allowHateSymbols": false,
+          "allowGore": false,
+          "maxAudioDb": 80
+        },
+        "curation": {
+          "preferredMedia": [
+            "image",
+            "video"
+          ],
+          "preferredTags": [
+            "local",
+            "photography",
+            "painting",
+            "illustration"
+          ],
+          "avoidTags": [
+            "political-ads"
+          ]
+        }
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "edgeNode",
+      "entity": {
+        "@id": "did:key:z6MkiEdgeNodeExampleDid",
+        "@type": [
+          "um:Entity",
+          "um:EdgeNode"
+        ],
+        "name": "Ember Edge Node",
+        "edgeBaseUrl": "http://um-edge-ember.local:3002",
+        "discovery": {
+          "mdnsService": "_um-edge._tcp.local",
+          "edgeDescriptorUrl": "http://um-edge-ember.local:3002/.well-known/um/edge.json"
+        }
+      }
+    }
+  ],
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "role",
+      "value": "venue",
+      "issuer": "did:web:ember-cafe.localartist.network"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "policy.safeMode",
+      "value": "PG-13",
+      "issuer": "did:web:ember-cafe.localartist.network"
+    }
+  ],
+  "devices": [
+    {
+      "deviceDid": "did:key:z6MkiShieldTvProExampleDid",
+      "displayId": "shield-tv-pro-001",
+      "trust": "enrolled",
+      "hardware": {
+        "model": "NVIDIA Shield TV Pro",
+        "modelNumber": "945-12897-2500-101",
+        "platform": "Android TV"
+      },
+      "enrolledAt": "2026-02-11T23:15:00Z"
+    }
+  ],
+  "pointers": [
+    {
+      "name": "edgeDescriptor",
+      "url": "http://um-edge-ember.local:3002/.well-known/um/edge.json"
+    },
+    {
+      "name": "matrixRoom.updates",
+      "url": "https://matrix.to/#/#um-updates:localartist.network"
+    },
+    {
+      "name": "matrixRoom.revocations",
+      "url": "https://matrix.to/#/#um-global-revocations:localartist.network"
+    },
+    {
+      "name": "solidPod.venueCanonical",
+      "url": "https://pods.localartist.network/venues/ember-cafe/"
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:web:ember-cafe.localartist.network#keys-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

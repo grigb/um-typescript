@@ -1,0 +1,36 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:6a7b8c9d-2222-4b8d-9d44-9fd2d00a1201",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:example:smart-glasses-user-allowed",
+  "issuedAt": "2026-02-20T05:10:00Z",
+  "expiresAt": "2026-02-21T05:10:00Z",
+  "consents": [
+    { "@type": "um:Consent", "name": "ar.recording.faceVisible", "value": "allowed" },
+    { "@type": "um:Consent", "name": "ar.recording.voiceAllowed", "value": "allowed" },
+    { "@type": "um:Consent", "name": "ar.profile.autoSharePublic", "value": "allowed" },
+    { "@type": "um:Consent", "name": "ar.profile.autoShareProfessional", "value": "restricted" }
+  ],
+  "pointers": [
+    { "name": "ar.profile.public", "url": "https://example.com/profiles/smart-user/public" },
+    { "name": "ar.profile.professional", "url": "https://example.com/profiles/smart-user/pro" },
+    { "name": "ar.policy.context", "url": "https://example.com/policies/smart-user/context" }
+  ],
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "arPolicyPack",
+      "entity": {
+        "@type": ["um:Entity", "ar:PolicyPack"],
+        "default": "deny-if-missing-consent",
+        "contexts": ["public", "private", "workplace", "event"]
+      }
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:example:smart-glasses-user-allowed#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

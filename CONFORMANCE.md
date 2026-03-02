@@ -14,8 +14,8 @@ npm run conformance
 The wrapper searches for conformance root in this order:
 
 1. `UM_CONFORMANCE_ROOT`
-2. `../universalmanifest/conformance` (relative to this repo)
-3. `./conformance`
+2. `./conformance` (bundled snapshot used by CI)
+3. `../universalmanifest/conformance` (developer fallback for sibling workspace setups)
 
 ## Explicit Root Example
 

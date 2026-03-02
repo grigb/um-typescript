@@ -1,0 +1,11 @@
+{
+  "__validate": "structural",
+  "__expectedError": "Missing signature",
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.2/schema.jsonld",
+  "@id": "urn:uuid:22222222-2222-4222-8222-222222222222",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.2",
+  "subject": "did:example:alice",
+  "issuedAt": "2026-02-17T00:00:00.000Z",
+  "expiresAt": "2026-02-18T00:00:00.000Z"
+}

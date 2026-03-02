@@ -1,0 +1,86 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:9d6a2a21-7b3e-4e83-a241-1dc9fad2e222",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:web:registry.example.org",
+  "issuedAt": "2026-02-22T01:00:00Z",
+  "expiresAt": "2026-08-22T01:00:00Z",
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.policy.trustMode",
+      "value": "trusted-attester",
+      "issuer": "did:web:oma3.org",
+      "issuedAt": "2026-02-22T01:00:00Z"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.attestation.endorsement",
+      "value": "endorsed",
+      "issuer": "did:web:security-lab.example",
+      "issuedAt": "2026-02-22T01:00:00Z"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.attestation.certification",
+      "value": "certified",
+      "issuer": "did:web:auditor.example",
+      "issuedAt": "2026-02-22T01:00:00Z"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.attestation.securityAssessment.status",
+      "value": "pass",
+      "issuer": "did:web:auditor.example",
+      "issuedAt": "2026-02-22T01:00:00Z"
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "omatrust.shareReputation",
+      "value": "restricted"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "omatrust.publishDerivedScore",
+      "value": "denied"
+    }
+  ],
+  "pointers": [
+    {
+      "name": "omatrust.reputation.attestation",
+      "url": "https://reputation.omatrust.org/attestations/0xtrustedattester01"
+    },
+    {
+      "name": "omatrust.trustedAttester.directory",
+      "url": "https://registry.omatrust.org/"
+    }
+  ],
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "omaTrustReputation",
+      "entity": {
+        "@type": [
+          "um:Entity",
+          "omatrust:ReputationProjection"
+        ],
+        "attestationUid": "0xtrustedattester01",
+        "schemaUid": "0xschema-certification-01",
+        "trustMode": "trusted-attester",
+        "trustedAttesters": [
+          "did:web:security-lab.example",
+          "did:web:auditor.example"
+        ],
+        "verificationResult": "verified"
+      }
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:web:registry.example.org#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

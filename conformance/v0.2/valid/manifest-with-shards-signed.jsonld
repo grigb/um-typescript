@@ -1,0 +1,40 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.2/schema.jsonld",
+  "@id": "urn:uuid:44444444-4444-4444-8444-444444444444",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.2",
+  "subject": "did:example:venue-edge",
+  "issuedAt": "2026-02-27T00:00:00.000Z",
+  "expiresAt": "2026-02-28T00:00:00.000Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "venueProfile",
+      "entity": {
+        "@id": "did:example:venue-edge",
+        "@type": "schema:Place",
+        "name": "Example Venue",
+        "description": "A demonstration venue for Universal Manifest"
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "deviceRegistration",
+      "ref": "https://example.pod.provider/devices/tv-001",
+      "entity": {
+        "@id": "urn:uuid:device-tv-001",
+        "@type": "um:Entity",
+        "name": "Display Device TV-001",
+        "description": "NVIDIA Shield TV Pro enrolled to venue edge"
+      }
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "JCS-RFC8785",
+    "keyRef": "did:example:venue-edge#key-1",
+    "created": "2026-02-27T00:00:00.000Z",
+    "publicKeySpkiB64": "MCowBQYDK2VwAyEAvWsBD/ov/5zQwtkxvssqOFz/Ejca8C0NfnAJ9z0iBZY=",
+    "value": "NkTRGYGG7jELyXFlaqFsLnkVs7E88dQ5lYL9Q1yMz4nsr9zsog9urjxQa25UNV2_REHfhqMX1_Q_Uf1Y6eXfDg"
+  }
+}

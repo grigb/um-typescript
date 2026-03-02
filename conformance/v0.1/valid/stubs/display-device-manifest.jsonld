@@ -1,0 +1,100 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:b95f0be3-70fa-405a-af25-543b89530fd1",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkiShieldTvProExampleDid",
+  "issuedAt": "2026-02-12T02:00:00Z",
+  "expiresAt": "2026-02-12T03:00:00Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "deviceIdentity",
+      "entity": {
+        "@id": "did:key:z6MkiShieldTvProExampleDid",
+        "@type": [
+          "um:Entity",
+          "um:DisplayDevice"
+        ],
+        "name": "NVIDIA Shield TV Pro (Test Device)",
+        "modelNumber": "945-12897-2500-101",
+        "capabilities": {
+          "rendering": [
+            "webgl2"
+          ],
+          "maxResolution": "3840x2160",
+          "preferredRenderResolution": "1920x1080"
+        }
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "venueAssociation",
+      "ref": "did:web:ember-cafe.localartist.network",
+      "entity": {
+        "@id": "did:web:ember-cafe.localartist.network",
+        "@type": [
+          "um:Entity",
+          "um:Venue"
+        ],
+        "name": "Ember Cafe (Demo Venue)"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "role",
+      "value": "display",
+      "issuer": "did:web:ember-cafe.localartist.network"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "policy.safeMode",
+      "value": "PG-13",
+      "issuer": "did:web:ember-cafe.localartist.network"
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "telemetry.proofOfPlay",
+      "value": "allowed",
+      "notes": "Logs should store manifest @id references, not full content payloads."
+    }
+  ],
+  "devices": [
+    {
+      "deviceDid": "did:key:z6MkiShieldTvProExampleDid",
+      "displayId": "shield-tv-pro-001",
+      "trust": "enrolled"
+    },
+    {
+      "deviceDid": "did:key:z6MkiEdgeNodeExampleDid",
+      "trust": "local"
+    }
+  ],
+  "pointers": [
+    {
+      "name": "edgeBaseUrl",
+      "url": "http://um-edge-ember.local:3002"
+    },
+    {
+      "name": "edgeDescriptor",
+      "url": "http://um-edge-ember.local:3002/.well-known/um/edge.json"
+    },
+    {
+      "name": "universalManifest.current",
+      "url": "http://um-edge-ember.local:3002/api/v1/universal-manifests/current?displayId=shield-tv-pro-001"
+    },
+    {
+      "name": "consumerExperience",
+      "url": "http://um-edge-ember.local:5175/"
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:web:ember-cafe.localartist.network#keys-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

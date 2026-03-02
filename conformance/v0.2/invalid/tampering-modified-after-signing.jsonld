@@ -1,0 +1,30 @@
+{
+  "__validate": "structural",
+  "__expectedError": "Signature verification failed",
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.2/schema.jsonld",
+  "@id": "urn:uuid:77777777-7777-4777-8777-777777777777",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.2",
+  "subject": "did:example:tampered-subject",
+  "issuedAt": "2026-02-27T00:00:00.000Z",
+  "expiresAt": "2026-02-28T00:00:00.000Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "tamperedData",
+      "entity": {
+        "@id": "did:example:tampered-subject",
+        "@type": "schema:Person",
+        "name": "Modified After Signing - This Should Fail Verification"
+      }
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "JCS-RFC8785",
+    "keyRef": "did:example:alice#key-1",
+    "created": "2026-02-27T00:00:00.000Z",
+    "publicKeySpkiB64": "MCowBQYDK2VwAyEAGpLr+jSVjXJ+O3F5IUyP/UWx/IRh6ajph6qIS66veNA=",
+    "value": "1f-wmSB-RgQ9PlPZIkKxC5YK71THuP8WMmpmpGbDiU6mswC0UaGyOAKlU4levPblBgwduoBqCWCnSlxL0T1KBw"
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "suiteVersion": "1.0.0-draft",
+  "specVersion": "0.1",
+  "fixtures": [
+    {
+      "filename": "invalid/empty-id.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Missing @id.",
+      "category": "required-fields",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/expired-for-use.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Manifest expired.",
+      "category": "ttl",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/invalid-expiresAt-format.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: expiresAt must be an ISO date-time.",
+      "category": "ttl",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/invalid-issuedAt-format.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: issuedAt must be an ISO date-time.",
+      "category": "ttl",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/issued-after-expires.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: issuedAt must be <= expiresAt.",
+      "category": "ttl",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/missing-context.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Missing @context.",
+      "category": "required-fields",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/missing-id.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Missing @id.",
+      "category": "required-fields",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/missing-subject.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Missing subject.",
+      "category": "required-fields",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/shard-wrong-type.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Missing um:Shard in shard @type.",
+      "category": "type-shape",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/shards-not-array.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: shards must be an array.",
+      "category": "shards",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "invalid/wrong-type.jsonld",
+      "expectedResult": "reject",
+      "reason": "Reject fixture: Missing um:Manifest in @type.",
+      "category": "type-shape",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/manifest-with-shards.jsonld",
+      "expectedResult": "accept",
+      "reason": "Valid shard composition fixture with typed shard entries.",
+      "category": "shards",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/minimal-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Baseline minimal v0.1 manifest with all required fields.",
+      "category": "required-fields",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/bluesky-personhood-multi-credential-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Bluesky Personhood Multi Credential Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/chia-credential-lane-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Chia Credential Lane Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/creator-public-capsule-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Creator Public Capsule Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/cross-system-projection-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Cross System Projection Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/display-device-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Display Device Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/display-envelope-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Display Envelope Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/mastodon-personhood-multi-credential-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Mastodon Personhood Multi Credential Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/metaverse-crossworld-profile-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Metaverse Crossworld Profile Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/multi-did-method-coverage-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Multi Did Method Coverage Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/oma-trust-lifecycle-edge-service-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Oma Trust Lifecycle Edge Service Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/oma-trust-proof-based-service-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Oma Trust Proof Based Service Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/oma-trust-trusted-attester-service-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Oma Trust Trusted Attester Service Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/rp1-spatial-fabric-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Rp1 Spatial Fabric Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/smart-glasses-ar-consent-allowed-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Smart Glasses Ar Consent Allowed Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/smart-glasses-ar-consent-denied-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Smart Glasses Ar Consent Denied Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/social-profile-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Social Profile Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/stubs/venue-edge-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Near-real Venue Edge Manifest stub remains structurally valid under v0.1.",
+      "category": "integration-stub",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/type-array-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "@type array form is valid when um:Manifest is present.",
+      "category": "type-shape",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    },
+    {
+      "filename": "valid/unknown-fields-manifest.jsonld",
+      "expectedResult": "accept",
+      "reason": "Unknown fields are tolerated to preserve forward compatibility.",
+      "category": "forward-compatibility",
+      "specVersion": "0.1",
+      "conformanceLevel": "baseline"
+    }
+  ]
+}

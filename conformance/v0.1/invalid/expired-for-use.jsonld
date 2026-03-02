@@ -1,0 +1,12 @@
+{
+  "__validate": "fresh",
+  "__expectedError": "Manifest expired",
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:00000000-0000-4000-8000-000000000009",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkpExampleSubjectDid",
+  "issuedAt": "1970-01-01T00:00:00Z",
+  "expiresAt": "1970-01-01T00:00:00Z",
+  "shards": []
+}

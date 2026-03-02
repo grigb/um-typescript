@@ -1,0 +1,78 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:5f5e6f7a-1111-4a9a-8d5e-7c9a5f3e2b10",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:example:rp1-user-01",
+  "issuedAt": "2026-02-20T05:00:00Z",
+  "expiresAt": "2026-02-21T05:00:00Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "spatialAnchors",
+      "entity": {
+        "@type": [
+          "um:Entity",
+          "rp1:AnchorSet"
+        ],
+        "world": "rp1:example-world",
+        "anchors": [
+          {
+            "id": "anchor-01",
+            "kind": "portal",
+            "coordinates": {
+              "x": 12.5,
+              "y": 1.8,
+              "z": -3.2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "placeMembership",
+      "entity": {
+        "@type": [
+          "um:Entity",
+          "rp1:PlaceMembership"
+        ],
+        "places": [
+          "rp1:place:gallery-district",
+          "rp1:place:riverwalk"
+        ]
+      }
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "spatial.locationShare",
+      "value": "allowed"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "spatial.crossWorldLinking",
+      "value": "denied"
+    }
+  ],
+  "pointers": [
+    {
+      "name": "rp1.fabric",
+      "url": "https://dev.rp1.com/fabrics/example-world"
+    },
+    {
+      "name": "rp1.anchorSet",
+      "url": "https://dev.rp1.com/fabrics/example-world/anchors"
+    },
+    {
+      "name": "rp1.placeGraph",
+      "url": "https://dev.rp1.com/fabrics/example-world/places"
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:example:rp1-user-01#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

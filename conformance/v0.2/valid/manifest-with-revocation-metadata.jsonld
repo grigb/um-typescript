@@ -1,0 +1,30 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.2/schema.jsonld",
+  "@id": "urn:uuid:66666666-6666-4666-8666-666666666666",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.2",
+  "subject": "did:example:revocable-issuer",
+  "issuedAt": "2026-02-27T00:00:00.000Z",
+  "expiresAt": "2026-02-28T00:00:00.000Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "issuerProfile",
+      "entity": {
+        "@id": "did:example:revocable-issuer",
+        "@type": "schema:Organization",
+        "name": "Example Organization with Revocation Support"
+      }
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "JCS-RFC8785",
+    "keyRef": "did:example:revocable-issuer#key-1",
+    "created": "2026-02-27T00:00:00.000Z",
+    "publicKeySpkiB64": "MCowBQYDK2VwAyEAvWsBD/ov/5zQwtkxvssqOFz/Ejca8C0NfnAJ9z0iBZY=",
+    "statusRef": "https://example.revocation.service/status/manifest-66666666",
+    "revocationCursor": "v1.cursor-20260227-000000",
+    "value": "l9fGKGnMzA9RSw9qHbKxECbGBhWfBErEqxNVHEEazSBgucYV5T3OMBa9QnoYwXgP5sc3dQWbqFfne-DPZK6CCw"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "__validate": "structural",
+  "__expectedError": "Unknown manifestVersion",
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.2/schema.jsonld",
+  "@id": "urn:uuid:99999999-9999-4999-8999-999999999999",
+  "@type": "um:Manifest",
+  "subject": "did:example:missing-version",
+  "issuedAt": "2026-02-27T00:00:00.000Z",
+  "expiresAt": "2026-02-28T00:00:00.000Z",
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "JCS-RFC8785",
+    "keyRef": "did:example:missing-version#key-1",
+    "created": "2026-02-27T00:00:00.000Z",
+    "publicKeySpkiB64": "MCowBQYDK2VwAyEAGpLr+jSVjXJ+O3F5IUyP/UWx/IRh6ajph6qIS66veNA=",
+    "value": "3nQ1mJ7cA5vG4wP8dD2jE3xY0rK7fC1nX6pO2nS4kR5tT9aB4xU1yV7mF8iC0oL4eP7uC2lO5bJ0fZ3vM6jK9P"
+  }
+}

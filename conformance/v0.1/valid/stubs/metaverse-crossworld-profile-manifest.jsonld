@@ -1,0 +1,71 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:7b8c9d0e-4444-4a3d-8a11-0dbf2ce44210",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:example:metaverse-user-01",
+  "issuedAt": "2026-02-20T05:20:00Z",
+  "expiresAt": "2026-02-21T05:20:00Z",
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "metaverse.role",
+      "value": "creator"
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "metaverse.profilePublic",
+      "value": "allowed"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "metaverse.socialGraphShare",
+      "value": "restricted"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "metaverse.voiceCapture",
+      "value": "denied"
+    }
+  ],
+  "pointers": [
+    {
+      "name": "metaverse.profile",
+      "url": "https://example.com/metaverse/profiles/user-01"
+    },
+    {
+      "name": "metaverse.avatar",
+      "url": "https://example.com/metaverse/avatars/user-01"
+    },
+    {
+      "name": "metaverse.inventory",
+      "url": "https://example.com/metaverse/inventory/user-01"
+    },
+    {
+      "name": "metaverse.socialGraph",
+      "url": "https://example.com/metaverse/social/user-01"
+    }
+  ],
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "crossWorldProfile",
+      "entity": {
+        "@type": ["um:Entity", "metaverse:CrossWorldProfile"],
+        "displayName": "Nova",
+        "homeWorld": "world://origin.example/home",
+        "supportedWorlds": [
+          "world://origin.example/home",
+          "world://gallery.example/arcade"
+        ]
+      }
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:example:metaverse-user-01#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

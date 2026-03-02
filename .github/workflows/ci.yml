@@ -29,14 +29,8 @@ jobs:
       - name: Unit tests
         run: npm test
 
-      - name: Checkout conformance suite
-        uses: actions/checkout@v4
-        with:
-          repository: grigb/universalmanifest
-          path: universal-manifest
-
       - name: Run conformance suite
-        run: UM_CONFORMANCE_ROOT="$GITHUB_WORKSPACE/universal-manifest/conformance" npm run conformance
+        run: npm run conformance
 
       - name: Upload conformance report
         uses: actions/upload-artifact@v4

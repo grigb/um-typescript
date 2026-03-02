@@ -1,0 +1,12 @@
+{
+  "name": "@universalmanifest/conformance-suite",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test:runner": "npm --prefix ./runner test",
+    "run:typescript-adapter": "npm --prefix ./runner run run:typescript-adapter",
+    "run:typescript-adapter:http": "npm --prefix ./runner run run:typescript-adapter:http",
+    "adapter:typescript:server": "npm --prefix ./adapters/typescript run server"
+  }
+}

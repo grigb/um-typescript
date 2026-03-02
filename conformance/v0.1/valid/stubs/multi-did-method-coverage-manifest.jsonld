@@ -1,0 +1,62 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:c5e9a0b3-6f4d-4c93-d8e5-0b3a4f6c9d12",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+  "issuedAt": "2026-02-20T06:00:00Z",
+  "expiresAt": "2027-02-20T06:00:00Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "identityMethods",
+      "entity": {
+        "@id": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+        "@type": ["um:Entity", "um:IdentityMethodSet"],
+        "methods": [
+          {
+            "method": "did:plc",
+            "identifier": "did:plc:z72i7hdynmk6r22z27h6tvur",
+            "resolver": "https://plc.directory",
+            "notes": "AT Protocol PLC DID — used by Bluesky."
+          },
+          {
+            "method": "did:web",
+            "identifier": "did:web:example.com:users:alice",
+            "resolver": "https://example.com/.well-known/did.json",
+            "notes": "Web-hosted DID document — DNS-rooted identity."
+          },
+          {
+            "method": "did:key",
+            "identifier": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+            "resolver": "local",
+            "notes": "Self-certifying key-based DID — no external resolver needed."
+          }
+        ]
+      }
+    }
+  ],
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "identity.didMethodEquivalence",
+      "value": "asserted",
+      "issuer": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+      "notes": "Self-assertion that all listed DID methods resolve to the same controlling entity."
+    }
+  ],
+  "consents": [
+    { "@type": "um:Consent", "name": "identity.crossMethodResolution", "value": "allowed" },
+    { "@type": "um:Consent", "name": "identity.publicKeyDisclosure", "value": "restricted" }
+  ],
+  "pointers": [
+    { "name": "did.plc.directory", "url": "https://plc.directory/did:plc:z72i7hdynmk6r22z27h6tvur" },
+    { "name": "did.web.wellKnown", "url": "https://example.com/.well-known/did.json" },
+    { "name": "did.key.multibase", "url": "https://w3c-ccg.github.io/did-method-key/" }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

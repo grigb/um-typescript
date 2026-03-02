@@ -1,0 +1,97 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:9db256d6-e70d-4d07-806d-185f7972aa14",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkiJulesChenExampleDid",
+  "issuedAt": "2026-02-12T02:00:00Z",
+  "expiresAt": "2026-02-13T02:00:00Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "canonicalProfilePointer",
+      "ref": "https://pods.localartist.network/creators/jules-chen/profile.jsonld",
+      "entity": {
+        "@id": "did:key:z6MkiJulesChenExampleDid",
+        "@type": [
+          "um:Entity",
+          "um:Creator"
+        ],
+        "name": "Jules Chen",
+        "handle": "@jules",
+        "homeCity": "Boston, MA"
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "publicProfile",
+      "entity": {
+        "@id": "https://localartist.network/@jules",
+        "@type": [
+          "um:Entity",
+          "schema:Person",
+          "um:PublicProfile"
+        ],
+        "name": "Jules Chen",
+        "description": "Generative visuals + ambient synth performances for small rooms and late-night galleries.",
+        "schema:image": "https://media.localartist.network/avatars/jules-chen.jpg",
+        "schema:sameAs": [
+          "https://localartist.network/@jules",
+          "https://matrix.to/#/@jules:localartist.network"
+        ],
+        "schema:knowsAbout": [
+          "generative art",
+          "synth",
+          "projection mapping"
+        ]
+      }
+    }
+  ],
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "role",
+      "value": "creator",
+      "issuer": "did:key:z6MkiJulesChenExampleDid"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "verification.status",
+      "value": "unverified",
+      "issuer": "did:key:z6MkiJulesChenExampleDid"
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "social.profilePublic",
+      "value": "allowed",
+      "notes": "Allows publishing a public profile view (web + ActivityPub) derived from this manifest."
+    },
+    {
+      "@type": "um:Consent",
+      "name": "publicDisplay",
+      "value": "allowed",
+      "notes": "Allows venues to render safe public profile fields on screens."
+    }
+  ],
+  "pointers": [
+    {
+      "name": "solidPod.creatorCanonical",
+      "url": "https://pods.localartist.network/creators/jules-chen/"
+    },
+    {
+      "name": "activityPub.actor",
+      "url": "https://localartist.network/@jules"
+    },
+    {
+      "name": "matrix.userId",
+      "url": "https://matrix.to/#/@jules:localartist.network"
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:key:z6MkiJulesChenExampleDid#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="20" role="img" aria-label="conformance: v0.2-extended">
+  <title>Conformance v0.2 Extended</title>
+  <rect width="132" height="20" fill="#555"/>
+  <rect x="132" width="112" height="20" fill="#1c7ed6"/>
+  <text x="66" y="14" fill="#fff" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle">conformance</text>
+  <text x="188" y="14" fill="#fff" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle">v0.2-extended</text>
+</svg>

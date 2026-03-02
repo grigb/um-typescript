@@ -1,0 +1,10 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:2b5f0d3c-3c4c-4b83-8f2a-6f3b2cbd5c7d",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkpExampleSubjectDid",
+  "issuedAt": "2026-02-11T20:45:58Z",
+  "expiresAt": "2026-02-12T20:45:58Z",
+  "shards": []
+}

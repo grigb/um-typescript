@@ -1,0 +1,115 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:c0550000-c055-4c05-8c05-c05500000001",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkCrossSystemProjectionExampleDid",
+  "issuedAt": "2026-02-20T00:00:00Z",
+  "expiresAt": "2026-02-28T23:59:59Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "publicProfile",
+      "entity": {
+        "@id": "did:key:z6MkCrossSystemProjectionExampleDid",
+        "@type": ["um:Entity", "schema:Person"],
+        "name": "Alex Rivera",
+        "description": "Digital artist and spatial computing enthusiast.",
+        "schema:image": "https://media.example.net/avatars/alex-rivera.jpg",
+        "schema:sameAs": [
+          "https://social.example.net/@alex",
+          "https://portfolio.example.net/alex-rivera"
+        ]
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "arPolicyPack",
+      "entity": {
+        "@type": ["um:Entity", "ar:PolicyPack"],
+        "default": "deny-if-missing-consent",
+        "contexts": ["public", "private", "workplace", "event"]
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "crossWorldProfile",
+      "entity": {
+        "@type": ["um:Entity", "metaverse:CrossWorldProfile"],
+        "displayName": "AlexR",
+        "homeWorld": "world://origin.example/studio",
+        "supportedWorlds": [
+          "world://origin.example/studio",
+          "world://gallery.example/exhibition"
+        ]
+      }
+    }
+  ],
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "role",
+      "value": "creator",
+      "issuer": "did:key:z6MkCrossSystemProjectionExampleDid"
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "social.profilePublic",
+      "value": "allowed",
+      "notes": "Allow public display on social platforms."
+    },
+    {
+      "@type": "um:Consent",
+      "name": "ar.recording.faceVisible",
+      "value": "allowed"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "ar.profile.autoSharePublic",
+      "value": "allowed"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "metaverse.profilePublic",
+      "value": "allowed"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "metaverse.socialGraphShare",
+      "value": "restricted"
+    }
+  ],
+  "pointers": [
+    {
+      "name": "social.activityPub",
+      "url": "https://social.example.net/@alex"
+    },
+    {
+      "name": "social.portfolio",
+      "url": "https://portfolio.example.net/alex-rivera"
+    },
+    {
+      "name": "ar.profile.public",
+      "url": "https://example.com/profiles/alex/public"
+    },
+    {
+      "name": "ar.policy.context",
+      "url": "https://example.com/policies/alex/context"
+    },
+    {
+      "name": "metaverse.profile",
+      "url": "https://example.com/metaverse/profiles/alex"
+    },
+    {
+      "name": "metaverse.avatar",
+      "url": "https://example.com/metaverse/avatars/alex"
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:key:z6MkCrossSystemProjectionExampleDid#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

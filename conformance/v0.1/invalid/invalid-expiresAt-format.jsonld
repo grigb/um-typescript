@@ -1,0 +1,11 @@
+{
+  "__expectedError": "expiresAt must be an ISO date-time",
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:00000000-0000-4000-8000-000000000008",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkpExampleSubjectDid",
+  "issuedAt": "2026-02-12T02:00:00Z",
+  "expiresAt": "tomorrow",
+  "shards": []
+}

@@ -1,0 +1,90 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:8c5f1f10-6a2f-4f72-9e30-0cb8e9c1d111",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:web:api.example.com",
+  "issuedAt": "2026-02-22T00:00:00Z",
+  "expiresAt": "2026-08-22T00:00:00Z",
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.policy.trustMode",
+      "value": "proof-based",
+      "issuer": "did:web:oma3.org",
+      "issuedAt": "2026-02-22T00:00:00Z"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.proof.type",
+      "value": "pop-eip712",
+      "issuer": "did:web:oma3.org",
+      "issuedAt": "2026-02-22T00:00:00Z"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.attestation.linkedIdentifier",
+      "value": "verified",
+      "issuer": "did:web:witness.omatrust.org",
+      "issuedAt": "2026-02-22T00:00:00Z"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.attestation.keyBinding",
+      "value": "verified",
+      "issuer": "did:web:witness.omatrust.org",
+      "issuedAt": "2026-02-22T00:00:00Z"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "omatrust.attestation.userReview",
+      "value": "positive",
+      "issuer": "did:web:reviewer.example",
+      "issuedAt": "2026-02-22T00:00:00Z"
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "omatrust.shareReputation",
+      "value": "allowed"
+    },
+    {
+      "@type": "um:Consent",
+      "name": "omatrust.shareProofMeta",
+      "value": "allowed"
+    }
+  ],
+  "pointers": [
+    {
+      "name": "omatrust.reputation.attestation",
+      "url": "https://reputation.omatrust.org/attestations/0xproofbased01"
+    },
+    {
+      "name": "omatrust.reputation.verify",
+      "url": "https://docs.oma3.org/start-here/quickstart-verify"
+    }
+  ],
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "omaTrustReputation",
+      "entity": {
+        "@type": [
+          "um:Entity",
+          "omatrust:ReputationProjection"
+        ],
+        "attestationUid": "0xproofbased01",
+        "schemaUid": "0xschema-linked-id-01",
+        "proofType": "pop-eip712",
+        "trustMode": "proof-based",
+        "verificationResult": "verified"
+      }
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:web:api.example.com#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}

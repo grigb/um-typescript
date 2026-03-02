@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://universalmanifest.net/conformance/schema/conformance-status.schema.json",
+  "title": "Universal Manifest Conformance Status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "implementation",
+    "conformanceLevels",
+    "lastTested",
+    "suiteVersion",
+    "reportUrl"
+  ],
+  "properties": {
+    "implementation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conformanceLevels": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["v0.1-baseline", "v0.2-baseline", "v0.2-extended"]
+      }
+    },
+    "lastTested": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "suiteVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reportUrl": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "__expectedError": "Missing @context",
+  "@id": "urn:uuid:00000000-0000-4000-8000-000000000001",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkpExampleSubjectDid",
+  "issuedAt": "2026-02-12T02:00:00Z",
+  "expiresAt": "2026-02-13T02:00:00Z"
+}
+

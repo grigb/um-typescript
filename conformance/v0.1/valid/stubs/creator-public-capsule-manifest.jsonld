@@ -1,0 +1,105 @@
+{
+  "@context": "https://universalmanifest.net/ns/universal-manifest/v0.1/schema.jsonld",
+  "@id": "urn:uuid:250acd0e-0709-4430-bc31-6b6bf41b72cb",
+  "@type": "um:Manifest",
+  "manifestVersion": "0.1",
+  "subject": "did:key:z6MkiAliceRiveraExampleDid",
+  "issuedAt": "2026-02-12T02:00:00Z",
+  "expiresAt": "2026-02-13T02:00:00Z",
+  "shards": [
+    {
+      "@type": "um:Shard",
+      "name": "canonicalProfilePointer",
+      "ref": "https://pods.localartist.network/creators/alice-rivera/profile.jsonld",
+      "entity": {
+        "@id": "did:key:z6MkiAliceRiveraExampleDid",
+        "@type": [
+          "um:Entity",
+          "um:Creator"
+        ],
+        "name": "Alice Rivera",
+        "handle": "@alice",
+        "homeCity": "Providence, RI"
+      }
+    },
+    {
+      "@type": "um:Shard",
+      "name": "publicCapsule",
+      "entity": {
+        "@id": "urn:uuid:8ea146e2-743a-4f0b-8f99-a53be2d5b614",
+        "@type": [
+          "um:Entity",
+          "um:PublicCapsule"
+        ],
+        "profile": {
+          "displayName": "Alice Rivera",
+          "bio": "Street photography + mixed media collage exploring memory and neighborhood ritual.",
+          "avatarUrl": "https://media.localartist.network/avatars/alice-rivera.jpg"
+        },
+        "featuredItems": [
+          {
+            "type": "CreativeWork",
+            "title": "Corner Store Sunlight",
+            "mediaUrl": "https://media.localartist.network/works/alice-rivera/corner-store-sunlight.jpg",
+            "license": "CC-BY-NC"
+          },
+          {
+            "type": "CreativeWork",
+            "title": "Night Bus Polaroids",
+            "mediaUrl": "https://media.localartist.network/works/alice-rivera/night-bus-polaroids.mp4",
+            "license": "CC-BY-NC"
+          }
+        ],
+        "safetyMode": "PG-13",
+        "expiration": "2026-02-13T02:00:00Z"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "@type": "um:Claim",
+      "name": "role",
+      "value": "creator",
+      "issuer": "did:key:z6MkiAliceRiveraExampleDid"
+    },
+    {
+      "@type": "um:Claim",
+      "name": "verification.status",
+      "value": "unverified",
+      "issuer": "did:key:z6MkiAliceRiveraExampleDid"
+    }
+  ],
+  "consents": [
+    {
+      "@type": "um:Consent",
+      "name": "publicDisplay",
+      "value": "allowed",
+      "notes": "Allows venues to render the Public Capsule on screens."
+    },
+    {
+      "@type": "um:Consent",
+      "name": "analytics.proofOfPlay",
+      "value": "allowed",
+      "notes": "Allows venues to emit proof-of-play events keyed by manifestId."
+    }
+  ],
+  "pointers": [
+    {
+      "name": "solidPod.creatorCanonical",
+      "url": "https://pods.localartist.network/creators/alice-rivera/"
+    },
+    {
+      "name": "matrix.userId",
+      "url": "https://matrix.to/#/@alice:localartist.network"
+    },
+    {
+      "name": "activityPub.actor",
+      "url": "https://localartist.network/@alice"
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyRef": "did:key:z6MkiAliceRiveraExampleDid#key-1",
+    "value": "BASE64URL_SIGNATURE_PLACEHOLDER"
+  }
+}
