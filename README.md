@@ -59,3 +59,14 @@ npm run conformance
 ```
 
 Conformance details and report output format are documented in `CONFORMANCE.md`.
+
+## Use As Template
+
+This repository is intended to be copied as a starter implementation.
+
+Recommended template workflow:
+
+1. Fork this repository.
+2. Keep `src/` API shape and tests intact while adapting internals to your runtime requirements.
+3. Keep `tests/conformance/adapter.mjs` contract-compatible so you can continue running the UM conformance suite.
+4. Run `npm test` and `npm run conformance` in CI for every change.

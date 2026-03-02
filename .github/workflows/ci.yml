@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout reference implementation
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Checkout conformance suite
+        uses: actions/checkout@v4
+        with:
+          repository: grigb/universal-manifest
+          path: universal-manifest
+
+      - name: Run conformance suite
+        run: UM_CONFORMANCE_ROOT="$GITHUB_WORKSPACE/universal-manifest/conformance" npm run conformance
+
+      - name: Upload conformance report
+        uses: actions/upload-artifact@v4
+        with:
+          name: conformance-report
+          path: tests/conformance/conformance-report.json
