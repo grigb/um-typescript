@@ -12,4 +12,7 @@ export interface SignOptions {
     publicKeySpkiB64?: string;
     created?: string;
 }
+/**
+ * Sign an unsigned v0.2 manifest using Ed25519 over JCS-canonicalized payload.
+ */
 export declare function sign(manifest: UniversalManifestUnsignedV02, options: SignOptions): UniversalManifestV02;

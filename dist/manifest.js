@@ -85,6 +85,12 @@ export function canonicalizeManifestPayload(manifest) {
 export function getManifestId(manifest) {
     return manifest['@id'];
 }
+/**
+ * Create a Universal Manifest payload.
+ *
+ * When `manifestVersion` is `"0.2"`, the payload is returned unsigned and is
+ * intended to be passed into {@link sign}.
+ */
 export function create(input) {
     const manifestVersion = input.manifestVersion ?? '0.1';
     const manifest = {
@@ -118,6 +124,9 @@ export function create(input) {
     assertValidManifest(manifest, { allowUnsignedV02: true });
     return manifest;
 }
+/**
+ * Assert that a value is a structurally valid Universal Manifest payload.
+ */
 export function assertValidManifest(value, options = {}) {
     if (!isRecord(value))
         throw new Error('Manifest must be an object');
@@ -169,6 +178,9 @@ export function assertValidManifest(value, options = {}) {
         }
     }
 }
+/**
+ * Validate a manifest and return a non-throwing result object.
+ */
 export function validate(value, options = {}) {
     try {
         assertValidManifest(value, options);

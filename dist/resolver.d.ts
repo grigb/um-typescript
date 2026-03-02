@@ -19,5 +19,12 @@ export interface ResolveOptions {
     requireFresh?: boolean;
     allowUnsignedV02?: boolean;
 }
+/**
+ * Resolve a manifest from:
+ * - an inline manifest object
+ * - a local registry map
+ * - a caller-provided fetch callback
+ * - or a resolver HTTP endpoint (defaults to `https://myum.net/{UMID}`)
+ */
 export declare function resolve(input: string | unknown, options?: ResolveOptions): Promise<UniversalManifest | UniversalManifestDraft>;
 export {};

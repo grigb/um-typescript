@@ -56,6 +56,9 @@ function derivePublicKeySpkiB64(privateKey: KeyObject): string {
   return Buffer.from(spkiDer as Buffer).toString('base64')
 }
 
+/**
+ * Sign an unsigned v0.2 manifest using Ed25519 over JCS-canonicalized payload.
+ */
 export function sign(manifest: UniversalManifestUnsignedV02, options: SignOptions): UniversalManifestV02 {
   assertValidManifest(manifest, { allowUnsignedV02: true })
 

@@ -10,5 +10,11 @@ export type VerificationResult = {
     ok: false;
     error: string;
 };
+/**
+ * Assert that a v0.2 manifest is structurally valid and signature-verified.
+ */
 export declare function assertVerified(manifest: unknown, options?: VerifyOptions): asserts manifest is UniversalManifestV02;
+/**
+ * Verify a manifest and return a non-throwing result object.
+ */
 export declare function verify(manifest: unknown, options?: VerifyOptions): VerificationResult;

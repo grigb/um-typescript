@@ -46,6 +46,9 @@ function resolvePublicKey(manifest: UniversalManifestV02, options: VerifyOptions
   throw new Error('Missing signature.publicKeySpkiB64 (key resolution is out of scope for this helper)')
 }
 
+/**
+ * Assert that a v0.2 manifest is structurally valid and signature-verified.
+ */
 export function assertVerified(manifest: unknown, options: VerifyOptions = {}): asserts manifest is UniversalManifestV02 {
   assertValidManifest(manifest, {
     allowUnsignedV02: false,
@@ -75,6 +78,9 @@ export function assertVerified(manifest: unknown, options: VerifyOptions = {}): 
   }
 }
 
+/**
+ * Verify a manifest and return a non-throwing result object.
+ */
 export function verify(manifest: unknown, options: VerifyOptions = {}): VerificationResult {
   try {
     assertVerified(manifest, options)

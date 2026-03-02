@@ -124,6 +124,12 @@ export function getManifestId(manifest: { '@id': string }): string {
   return manifest['@id']
 }
 
+/**
+ * Create a Universal Manifest payload.
+ *
+ * When `manifestVersion` is `"0.2"`, the payload is returned unsigned and is
+ * intended to be passed into {@link sign}.
+ */
 export function create(input: CreateManifestInput): UniversalManifestDraft {
   const manifestVersion = input.manifestVersion ?? '0.1'
   const manifest: Record<string, unknown> = {
@@ -157,6 +163,9 @@ export function create(input: CreateManifestInput): UniversalManifestDraft {
   return manifest as UniversalManifestDraft
 }
 
+/**
+ * Assert that a value is a structurally valid Universal Manifest payload.
+ */
 export function assertValidManifest(
   value: unknown,
   options: ValidateOptions = {}
@@ -216,6 +225,9 @@ export function assertValidManifest(
   }
 }
 
+/**
+ * Validate a manifest and return a non-throwing result object.
+ */
 export function validate(value: unknown, options: ValidateOptions = {}): ValidationResult {
   try {
     assertValidManifest(value, options)

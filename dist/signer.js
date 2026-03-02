@@ -24,6 +24,9 @@ function derivePublicKeySpkiB64(privateKey) {
     const spkiDer = publicKey.export({ format: 'der', type: 'spki' });
     return Buffer.from(spkiDer).toString('base64');
 }
+/**
+ * Sign an unsigned v0.2 manifest using Ed25519 over JCS-canonicalized payload.
+ */
 export function sign(manifest, options) {
     assertValidManifest(manifest, { allowUnsignedV02: true });
     if (manifest.manifestVersion !== '0.2') {
