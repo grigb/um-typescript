@@ -60,6 +60,12 @@ npm run conformance
 
 Conformance details and report output format are documented in `CONFORMANCE.md`.
 
+## Examples
+
+- `examples/create-and-sign.ts`
+- `examples/verify-manifest.ts`
+- `examples/resolve-umid.ts`
+
 ## Use As Template
 
 This repository is intended to be copied as a starter implementation.
